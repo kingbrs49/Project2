@@ -1,3 +1,48 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+
+#logomain {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  color: #388e3c;
+  font-size: 55px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+
+}
+
+#menu {
+  font-family: 'Open Sans', sans-serif;
+  /* font-weight: bolder; */
+  border-bottom: 3px rgb(161, 161, 161) solid;
+
+}
+
+#topddiv {
+  background-color: white;
+  height: 60vh;
+}
+
+.picture {
+  width: 100%;
+  display: block;
+}
+
+footer, main {
+  display: flex;
+  min-height: 20vh;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
