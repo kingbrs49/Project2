@@ -1,30 +1,44 @@
+// :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// Run: npm i express
+//      npm i dotenv
+//      npm i sequelize
+//      npm i mysql2
+
+// #### Dependencies
+// ==============================================================================
 require("dotenv").config();
 var express = require("express");
-var exphbs = require("express-handlebars");
-var nodemailer = require('nodemailer');
-var schedule = require('node-schedule');
+// var exphbs = require("express-handlebars");
 
-
+// #### Requiring models for syncing
+// ==============================================================================
 var db = require("./models");
 
+// #### Express app
+// ==============================================================================
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
-// Middleware
-app.use(express.urlencoded({ extended: false }));
+// #### Express app tp handle data parsing
+// ==============================================================================
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
-app.set("view engine", "handlebars");
 
-// Routes
+// #### Handlebars
+// ==============================================================================
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main"
+//   })
+// );
+// app.set("view engine", "handlebars");
+
+
+// #### Routes
+// ==============================================================================
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
@@ -37,13 +51,9 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
+    console.log("Listening on PORT: " + PORT);
   });
 });
 
@@ -68,8 +78,8 @@ var mailOptions = {
 
 
 //Node-schedule
-var j = schedule.scheduleJob('5 19 20 16 1 4', function(){
-  transporter.sendMail(mailOptions, function(error, info){
+var j = schedule.scheduleJob('5 19 20 16 1 4', function () {
+  transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
     } else {
