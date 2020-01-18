@@ -58,3 +58,33 @@ db.sequelize.sync(syncOptions).then(function () {
 });
 
 module.exports = app;
+
+//Nodemailer
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'thedailylifehack@gmail.com',
+    pass: 'hackmylife123'
+  }
+});
+
+var mailOptions = {
+  from: 'thedailylifehack@gmail.com',
+  to: 'rasilverthorn@ucdavis.edu, chriscoonwilliam@gmail.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+
+
+//Node-schedule
+var j = schedule.scheduleJob('5 19 20 16 1 4', function () {
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
+  console.log('Scheduled!');
+});
