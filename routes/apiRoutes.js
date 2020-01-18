@@ -14,7 +14,10 @@ cloudinary.config({
 module.exports = function(app) {
   app.post("/api/file", function(req, res) {
 
+    console.log(req.body)
+
     const img = req.body.img;
+    console.log(img);
     cloudinary.uploader.upload(img, function(error, result) {
 if(error) throw error;
 

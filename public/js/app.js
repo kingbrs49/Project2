@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     console.log(e.target.files[0]);
     const imgData ={
-        img: e.target.files[0].name
+        img: e.target.files[0]
     }
 
 
