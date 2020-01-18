@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // Get references to page elements
 var $hackText = $("#hack-text");
 var $hackDescription = $("#hack-description");
