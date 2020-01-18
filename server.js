@@ -1,9 +1,10 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-// #### Dependencies
 // Run: npm i express
 //      npm i dotenv
 //      npm i sequelize
 //      npm i mysql2
+
+// #### Dependencies
 // ==============================================================================
 require("dotenv").config();
 var express = require("express");
@@ -18,9 +19,9 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
-// #### Express app tp handle dara parsing
+// #### Express app tp handle data parsing
 // ==============================================================================
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
