@@ -7,6 +7,7 @@ module.exports = function (app) {
   app.get("/api/hacks", function (req, res) {
     db.Hacks.findAll({}).then(function (dbHacks) {
       res.json(dbHacks);
+      // res.end("yoyoyoyooy")
     });
   });
 
