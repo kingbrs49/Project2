@@ -1,5 +1,9 @@
 // :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 // #### Dependencies
+// Run: npm i express
+//      npm i dotenv
+//      npm i sequelize
+//      npm i mysql2
 // ==============================================================================
 require("dotenv").config();
 var express = require("express");
