@@ -7,7 +7,7 @@
 module.exports = function (sequelize, DataTypes) {
   var Hacks = sequelize.define("hacks", {
     imageHacks: DataTypes.STRING,
-    text: DataTypes.STRING,
+    text: DataTypes.STRING
   });
   return Hacks;
 };
