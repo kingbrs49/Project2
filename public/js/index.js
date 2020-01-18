@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");

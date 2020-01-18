@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-var nodemailer = require('nodemailer');
-var schedule = require('node-schedule');
+var nodemailer = require("nodemailer");
+var schedule = require("node-schedule");
 
 
 var db = require("./models");
@@ -37,8 +39,8 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
@@ -51,30 +53,30 @@ module.exports = app;
 
 //Nodemailer
 var transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: "gmail",
   auth: {
-    user: 'thedailylifehack@gmail.com',
-    pass: 'hackmylife123'
+    user: "thedailylifehack@gmail.com",
+    pass: "hackmylife123"
   }
 });
 
 var mailOptions = {
-  from: 'thedailylifehack@gmail.com',
-  to: 'rasilverthorn@ucdavis.edu, chriscoonwilliam@gmail.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
+  from: "thedailylifehack@gmail.com",
+  to: "rasilverthorn@ucdavis.edu, chriscoonwilliam@gmail.com",
+  subject: "Sending Email using Node.js",
+  text: "That was easy!"
 };
 
 
 
 //Node-schedule
-var j = schedule.scheduleJob('5 19 20 16 1 4', function(){
-  transporter.sendMail(mailOptions, function(error, info){
+var j = schedule.scheduleJob("5 19 20 16 1 4", function () {
+  transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
     } else {
-      console.log('Email sent: ' + info.response);
+      console.log("Email sent: " + info.response);
     }
   });
-  console.log('Scheduled!');
+  console.log("Scheduled!");
 });
