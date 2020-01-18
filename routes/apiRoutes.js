@@ -1,53 +1,49 @@
-/* eslint-disable prettier/prettier */
-var db = require("../models");
+// /* eslint-disable prettier/prettier */
+// var db = require("../models");
 
-<<<<<<< HEAD
-module.exports = function (app) {
-  // Get all examples
-  app.get("/api/examples", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.json(dbExamples);
-    });
-  });
+// // #### Routes
 
-  // Create a new example
-  app.post("/api/examples", function (req, res) {
-    // eslint-disable-next-line prettier/prettier
-    db.Example.create(req.body).then(function (dbExample) {
-      res.json(dbExample);
-    });
-  });
+var cloudinary = require("cloudinary").v2;
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function (
-      dbExample
-    ) {
-      res.json(dbExample);
-=======
-// #### Routes
-// ==============================================================================
-module.exports = function (app) {
-  // Get all the lifeHacks_db data
-  app.get("/api/hacks", function (req, res) {
-    db.Hacks.findAll({}).then(function (dbHacks) {
-      res.json(dbHacks);
-      // res.end("yoyoyoyooy")
-    });
-  });
+cloudinary.config({
+  cloud_name: "integrated-information-consultants-llc",
+  api_key: "328516388269339",
+  api_secret: "dSz3LaW8nqZgTfl1OgcSz8n6wlE"
+});
 
-  // Create a life hack
-  app.post("/api/hacks", function (req, res) {
-    db.Hacks.create(req.body).then(function (dbHacks) {
-      res.json(dbHacks);
-    });
-  });
+module.exports = function(app) {
+  app.post("/api/file", function(req, res) {
 
-  // Delete an hack by id
-  app.delete("/api/hacks/:id", function (req, res) {
-    db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
-      res.json(dbHacks);
->>>>>>> 3d373a536d302b5735d2b1166132babca1bb0f4d
+    const img = req.body.img;
+    cloudinary.uploader.upload(img, function(error, result) {
+if(error) throw error;
+
+      console.log(result);
+      res.json(result);
     });
   });
 };
+// // ==============================================================================
+// module.exports = function (app) {
+//   // Get all the lifeHacks_db data
+//   app.get("/api/hacks", function (req, res) {
+//     db.Hacks.findAll({}).then(function (dbHacks) {
+//       res.json(dbHacks);
+//       // res.end("yoyoyoyooy")
+//     });
+//   });
+
+//   // Create a life hack
+//   app.post("/api/hacks", function (req, res) {
+//     db.Hacks.create(req.body).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+
+//   // Delete an hack by id
+//   app.delete("/api/hacks/:id", function (req, res) {
+//     db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+// };
