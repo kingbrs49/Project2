@@ -8,8 +8,10 @@ $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: true
 });
+autoplay();
+function autoplay() {
+    $('.carousel.carousel-slider').carousel('next');
+    setTimeout(autoplay, 8000);
+}
 
 
-// $(document).ready(function () {
-//     $('.carousel').carousel();
-// });

@@ -46,3 +46,7 @@ footer, main {
   flex-direction: column;
   flex: 1 0 auto;
 }
+
+.row .col {
+  padding: 0;
+}
