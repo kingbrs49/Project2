@@ -65,6 +65,9 @@ main {
   background-color: #212121;
   margin: 10px;
 }
+/* .datepicker{
+  color: black;
+} */
 input{
   color: white;
 }
@@ -73,12 +76,13 @@ input{
   text-align: center;
 }
 .reminder{
-  color: white;
+  color: black;
   background-color:#212121;
   height: auto;
   margin: 10px 10px;
 }
 .reminderTable{
+  color:white;
   text-align: center;
   background-color: #388e3c;
   margin-bottom: 10px;

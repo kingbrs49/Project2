@@ -35,7 +35,7 @@ $(".submit").on("click", function () {
     var reminderTd = $("<td>").text(reminder);
     var dateTd = $("<td>").text(date);
     var timeTd = $("<td>").text(time);
-    var checkbox = $("<td>").append("<form action='#'> <p> <label> <input type='checkbox' /><span>Done</span></label></p> </form>");
+    var checkbox = $("<td>").append("<form action='#'> <p> <label> <input class='filled-in' type='checkbox' /> <span>Done</span></label></p> </form>");
 
     newRow.append(reminderTd, dateTd, timeTd, checkbox);
     $("tbody").append(newRow);
