@@ -1,3 +1,8 @@
+body{
+  background-image: url("../img/betterpic.jpg");
+  background-size: cover ;
+  color: white;
+}
 .list-group-item {
   line-height: 2.5;
 }
@@ -40,9 +45,12 @@ h2 {
   display: block;
 }
 
-footer, main {
+main {
   display: flex;
   min-height: 20vh;
   flex-direction: column;
   flex: 1 0 auto;
+} 
+.page-footer{
+  position: sticky;
 }

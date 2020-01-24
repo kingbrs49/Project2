@@ -5,6 +5,8 @@
 //      npm i dotenv
 //      npm i sequelize
 //      npm i mysql2
+//      npm nodemailer
+//      npm node-schedule
 
 // #### Dependencies
 // ==============================================================================
