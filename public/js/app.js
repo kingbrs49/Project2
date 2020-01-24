@@ -47,3 +47,6 @@ $(".submit").on("click", function () {
 $(document).ready(function(){
     $('.modal').modal();
   });
+$(document).ready(function () {
+    $('.sidenav').sidenav();
+});
