@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+    <link rel="stylesheet" href="../styles/styles.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper" style="background-color: #388e3c ">
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down" id="menu">
+                <li><a href="sass.html">Reminders</a></li>
+                <li><a href="badges.html">Schedule</a></li>
+                <li><a href="collapsible.html">Hacks</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="./reminder.html">Reminders</a></li>
+        <li><a href="badges.html">Schedule</a></li>
+        <li><a href="hack.html">Hacks</a></li>
+
+    </ul>
+
+    <div class="row" id="caro">
+
+        <div class="col s12">
+            <br>
+
+
+            <div class="carousel carousel-slider center">
+                <!-- <div class="carousel-fixed-item center">
+
+                </div> -->
+                <br>
+                <br>
+                <div class="carousel">
+                    <div class="carousel-item" style="background-color:#212121" href="#one!">
+                        <br>
+                        <i class="material-icons large" style="color: #388e3c; width:45;">blur_on</i>
+                        <br>
+                        <a href="#!" class="brand-logo .center-align green-text"
+                            style="font-size:40px;font-family: 'Open Sans', sans-serif;font-weight:bolder;"
+                            id="logomain">Life
+                            Hack</a>
+                        <h2 style="color:white;font-family: 'Open Sans', sans-serif;">Create discipline. Stay Connected.
+                        </h2>
+                        <a class="btn waves-effect white grey-text darken-text-2">button</a>
+                    </div>
+
+                    <div class="carousel-item white-text" style="background-color:#212121" shref="#two!">
+                        <h2 style="color:#388e3c">ALWAYS BE PREPARED.</h2>
+                        <p class="white-text">
+                            <div class="row">
+                                <div class="col-3-sm left-align">
+                                    Remainders
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="carousel-item white-text" style="background-color:#212121" href="#three!">
+                        <h2>Third Panel</h2>
+                        <p class="white-text"></p>
+                    </div>
+                    <div class="carousel-item white-text" style="background-color:#212121" href="#four!">
+                        <h2>Fourth Panel</h2>
+                        <p class="white-text"></p>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="center-align">
+
+        </div>
+
+        <!-- <img src="../img/betterpic.jpg" alt="pic" style="width:100%;"> -->
+
+    </div>
+
+    <!-- HOLDS ALL REMINDER DATA -->
+    <div class="reminder-holder container">
+        <h1 class="reminder-name">Reminders</h1>
+        <div class="reminder">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <!-- <i class="material-icons prefix">create</i> -->
+                            <!-- reminder input -->
+                            <input id="icon_prefix" type="text" class=" reminderInfo validate">
+                            <label for="icon_prefix">Reminder</label>
+                        </div>
+                        <!-- time input -->
+                        <div class="input-field col s6">
+                            <!-- <i class="material-icons prefix">access_time</i> -->
+                            <input id="icon_prefix" type="text" class="timepicker">
+                            <label for="icon_prefix">Time</label>
+                        </div>
+                    </div>
+                    <!-- date input -->
+                    <div class="input-field col s6">
+                        <!-- <i class="material-icons prefix">date_range</i> -->
+                        <input id="icon_prefix" type="text" class="datepicker">
+                        <label for="datepicker">Date</label>
+                    </div>
+
+                    <!-- submit button -->
+                    <a class="waves-effect green darken btn-small submit">Submit</a>
+                </form>
+            </div>
+            <!-- TABLE FOR THE REMINDERS -->
+            <div class="reminderTable container">
+                <div class="row">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reminder</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Complete/ Incomplete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer"
+        style="background-color: #388e3c;bottom:0;left:0;width:100%;height:7vh;border-top: 3px rgb(161, 161, 161) solid;">
+    </footer>
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+</body>
+
+</html>

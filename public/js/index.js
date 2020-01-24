@@ -1,47 +1,48 @@
+/* eslint-disable prettier/prettier */
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $hackText = $("#hack-text");
+var $hackDescription = $("#hack-description");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $hackList = $("#hack-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function (example) {
+  saveHacks: function (hacks) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/hacks",
+      data: JSON.stringify(hacks)
     });
   },
-  getExamples: function () {
+  getHacks: function () {
     return $.ajax({
-      url: "api/examples",
+      url: "api/hacks",
       type: "GET"
     });
   },
-  deleteExample: function (id) {
+  deleteHacks: function (id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/hacks/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function () {
-  API.getExamples().then(function (data) {
-    var $examples = data.map(function (example) {
+var refreshHacks = function () {
+  API.getHacks().then(function (data) {
+    var $hacks = data.map(function (hacks) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(hacks.text)
+        .attr("href", "/example/" + hacks.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": hacks.id
         })
         .append($a);
 
@@ -54,8 +55,8 @@ var refreshExamples = function () {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $hackList.empty();
+    $hackList.append($hacks);
   });
 };
 
@@ -64,22 +65,22 @@ var refreshExamples = function () {
 var handleFormSubmit = function (event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var hack = {
+    text: $hackText.val().trim(),
+    description: $hackDescription.val().trim()
   };
 
-  if (!(example.text && example.description)) {
+  if (!(hack.text && hack.description)) {
     alert("You must enter an example text and description!");
     return;
   }
 
-  API.saveExample(example).then(function () {
+  API.saveExample(hack).then(function () {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $hackText.val("");
+  $hackDescription.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

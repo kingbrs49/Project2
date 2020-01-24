@@ -1,24 +1,86 @@
-var db = require("../models");
+// /* eslint-disable prettier/prettier */
+// var db = require("../models");
+
+// // #### Routes
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+var cloudinary = require("cloudinary").v2;
+
+cloudinary.config({
+  cloud_name: "integrated-information-consultants-llc",
+  api_key: "328516388269339",
+  api_secret: "dSz3LaW8nqZgTfl1OgcSz8n6wlE"
+});
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  app.get("/api/lifeHacks", function(req, res) {
+    cloudinary.search
+  .expression('resource_type:image');
+  //.sort_by('public_id','desc')
+  .max_results(30)
+  .execute().then(result => {
+    //console.log(result);
+    const shuffledResult = shuffle(result.resources);
+    console.log(shuffledResult);
+    res.json(shuffledResult);
   });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
-    });
   });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-    });
-  });
+  // app.post("/api/file", function(req, res) {
+  //   console.log(img);
+  //   cloudinary.uploader.upload(
+  //     req.files.image.path,
+  //     {
+  //       width: 300,
+  //       height: 300,
+  //       crop: "limit",
+  //       tags: req.body.tags,
+  //       moderation: "manual"
+  //     },
+  //     function() {
+  //       console.log(result);
+  //       res.json(result);
+  //     }
+  //   );
+  // });
 };
+// // ==============================================================================
+// module.exports = function (app) {
+//   // Get all the lifeHacks_db data
+//   app.get("/api/hacks", function (req, res) {
+//     db.Hacks.findAll({}).then(function (dbHacks) {
+//       res.json(dbHacks);
+//       // res.end("yoyoyoyooy")
+//     });
+//   });
+
+//   // Create a life hack
+//   app.post("/api/hacks", function (req, res) {
+//     db.Hacks.create(req.body).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+
+//   // Delete an hack by id
+//   app.delete("/api/hacks/:id", function (req, res) {
+//     db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+// };
