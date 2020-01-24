@@ -2,6 +2,24 @@
 // var db = require("../models");
 
 // // #### Routes
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 
 var cloudinary = require("cloudinary").v2;
 
@@ -12,19 +30,35 @@ cloudinary.config({
 });
 
 module.exports = function(app) {
-  app.post("/api/file", function(req, res) {
-
-    console.log(req.body)
-
-    const img = req.body.img;
-    console.log(img);
-    cloudinary.uploader.upload(img, function(error, result) {
-if(error) throw error;
-
-      console.log(result);
-      res.json(result);
-    });
+  app.get("/api/lifeHacks", function(req, res) {
+    cloudinary.search
+  .expression('resource_type:image');
+  //.sort_by('public_id','desc')
+  .max_results(30)
+  .execute().then(result => {
+    //console.log(result);
+    const shuffledResult = shuffle(result.resources);
+    console.log(shuffledResult);
+    res.json(shuffledResult);
   });
+  });
+  // app.post("/api/file", function(req, res) {
+  //   console.log(img);
+  //   cloudinary.uploader.upload(
+  //     req.files.image.path,
+  //     {
+  //       width: 300,
+  //       height: 300,
+  //       crop: "limit",
+  //       tags: req.body.tags,
+  //       moderation: "manual"
+  //     },
+  //     function() {
+  //       console.log(result);
+  //       res.json(result);
+  //     }
+  //   );
+  // });
 };
 // // ==============================================================================
 // module.exports = function (app) {
