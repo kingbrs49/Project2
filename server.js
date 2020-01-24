@@ -11,6 +11,8 @@
 // #### Dependencies
 // ==============================================================================
 require("dotenv").config();
+var nodemailer = require("nodemailer");
+var schedule = require("node-schedule");
 var express = require("express");
 // var exphbs = require("express-handlebars");
 
