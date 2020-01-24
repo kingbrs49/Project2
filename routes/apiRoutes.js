@@ -32,15 +32,15 @@ cloudinary.config({
 module.exports = function (app) {
   app.get("/api/lifeHacks", function (req, res) {
     cloudinary.search
-      .expression('resource_type:image')
-      //.sort_by('public_id','desc')
-      .max_results(30)
-      .execute().then(result => {
-        //console.log(result);
-        const shuffledResult = shuffle(result.resources);
-        console.log(shuffledResult);
-        res.json(shuffledResult);
-      });
+  .expression('resource_type:image')
+  .sort_by('public_id','desc')
+  .max_results(30)
+  .execute().then(result => {
+    //console.log(result);
+    const shuffledResult = shuffle(result.resources);
+    console.log(shuffledResult);
+    res.json(shuffledResult);
+  });
   });
   // app.post("/api/file", function(req, res) {
   //   console.log(img);
