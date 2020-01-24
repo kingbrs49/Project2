@@ -29,8 +29,8 @@ cloudinary.config({
   api_secret: "dSz3LaW8nqZgTfl1OgcSz8n6wlE"
 });
 
-module.exports = function(app) {
-  app.get("/api/lifeHacks", function(req, res) {
+module.exports = function (app) {
+  app.get("/api/lifeHacks", function (req, res) {
     cloudinary.search
   .expression('resource_type:image')
   .sort_by('public_id','desc')
