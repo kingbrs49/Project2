@@ -86,3 +86,8 @@ input{
 .page-footer{
   position: sticky;
 }
+
+.modal-content {
+  color: black;
+  background-color: #388e3c;
+}
