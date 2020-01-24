@@ -58,16 +58,30 @@ main {
   width: auto;
   height: auto;
   border: solid 5px black;
+  margin-bottom: 10px;
 }
 
 .reminder-name{
   background-color: #212121;
   margin: 10px;
 }
+input{
+  color: white;
+}
+
+.list{
+  text-align: center;
+}
 .reminder{
-  background-color: gray;
+  color: white;
+  background-color:#212121;
   height: auto;
   margin: 10px 10px;
+}
+.reminderTable{
+  text-align: center;
+  background-color: #388e3c;
+  margin-bottom: 10px;
 }
 .page-footer{
   position: sticky;

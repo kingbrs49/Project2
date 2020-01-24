@@ -93,6 +93,7 @@
 
     </div>
 
+    <!-- HOLDS ALL REMINDER DATA -->
     <div class="reminder-holder container">
         <h1 class="reminder-name">Reminders</h1>
         <div class="reminder">
@@ -100,18 +101,46 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s6">
-                            <i class="material-icons prefix">create</i>
-                            <input id="icon_prefix" type="text" class="validate">
+                            <!-- <i class="material-icons prefix">create</i> -->
+                            <!-- reminder input -->
+                            <input id="icon_prefix" type="text" class=" reminderInfo validate">
                             <label for="icon_prefix">Reminder</label>
                         </div>
+                        <!-- time input -->
                         <div class="input-field col s6">
-                            <i class="material-icons prefix">access_alarm</i>
-                            <input id="icon_telephone" type="tel" class="validate">
-                            <label for="icon_telephone">When</label>
+                            <!-- <i class="material-icons prefix">access_time</i> -->
+                            <input id="icon_prefix" type="text" class="timepicker">
+                            <label for="icon_prefix">Time</label>
                         </div>
                     </div>
-                    <input type="text" class="timepicker">
+                    <!-- date input -->
+                    <div class="input-field col s6">
+                        <!-- <i class="material-icons prefix">date_range</i> -->
+                        <input id="icon_prefix" type="text" class="datepicker">
+                        <label for="datepicker">Date</label>
+                    </div>
+
+                    <!-- submit button -->
+                    <a class="waves-effect green darken btn-small submit">Submit</a>
                 </form>
+            </div>
+            <!-- TABLE FOR THE REMINDERS -->
+            <div class="reminderTable container">
+                <div class="row">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Reminder</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Complete/ Incomplete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>
