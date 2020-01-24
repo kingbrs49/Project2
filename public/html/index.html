@@ -8,10 +8,9 @@
     <title>Document</title>
 
 
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/reset.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
 </head>
 
@@ -21,92 +20,197 @@
 
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down" id="menu">
-                <li><a href="sass.html">Reminders</a></li>
-                <li><a href="badges.html">Schedule</a></li>
-                <li><a href="./hack.html">Hacks</a></li>
+                <li><a href="reminder.html">Reminders</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="hacks">Hacks</a></li>
             </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Reminders</a></li>
-        <li><a href="badges.html">Schedule</a></li>
-        <li><a href="collapsible.html">Hacks</a></li>
+        <li><a href="reminder.html">Reminders</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="hacks">Hacks</a></li>
 
     </ul>
 
-    <div class="row" id="caro">
-
-        <div class="col s12">
-            <br>
-
-
-            <div class="carousel carousel-slider center">
-                <!-- <div class="carousel-fixed-item center">
-
-                </div> -->
+    <div class="carousel carousel-slider center" id="caro" style="top:-2rem;bottom:-2rem;">
+        <div class="carousel-fixed-item center">
+        </div>
+        <br>
+        <br>
+        <div class="carousel">
+            <div class="carousel-item" style="background-color:#212121; padding:0;" href="#one!">
                 <br>
                 <br>
-                <div class="carousel">
-                    <div class="carousel-item" style="background-color:#212121" href="#one!">
-                        <br>
-                        <br>
-                        <i class="material-icons large" style="color: #388e3c; width:45;">blur_on</i>
-                        <br>
-                        <a href="#!" class="brand-logo .center-align green-text"
-                            style="font-size:59px;font-family: 'Open Sans', sans-serif;font-weight:bolder;"
-                            id="logomain">Life
-                            Hack</a>
-                        <h2 style="color:white;font-family: 'Open Sans', sans-serif;">Create discipline. Stay Connected.
-                        </h2>
-                        <a class="btn waves-effect white grey-text darken-text-2">button</a>
-                    </div>
+                <br>
+                <i class="material-icons large" style="color: #388e3c; width:45;">blur_on</i>
+                <br>
+                <br>
+                <a href="#!" class="brand-logo .center-align green-text"
+                    style="font-size:59px;font-family: 'Open Sans', sans-serif;font-weight:bolder;" id="logomain">Life
+                    Hack</a>
+                <h2 style="color:white;font-family: 'Open Sans', sans-serif;font-size: 25px;">Create discipline. Stay
+                    Connected.
+                </h2>
+                <!-- <a class="btn waves-effect white grey-text darken-text-2">button</a> -->
+            </div>
 
-                    <div class="carousel-item white-text" style="background-color:#212121" shref="#two!">
-                        <h2 style="color:#388e3c">ALWAYS BE PREPARED.</h2>
-                        <p class="white-text">
-                            <div class="row">
-                                <div class="col-3-sm left-align">
-                                    Remainders
-                                </div>
+            <div class="carousel-item white-text" style="background-color:#212121" shref="#two!">
+                <h2 style="color:#388e3c;font-family: 'Open Sans', sans-serif; font-weight:bolder;">ALWAYS BE PREPARED
+                </h2>
+
+                <p class="white-text">
+                    <div class="container">
+                        <div class="row" style="padding:20px;">
+
+                            <div class="col s4">
+                                <h7 class="col-6-sm left-align">
+
+
+                                </h7>
+
+
+                                <br>
+                                <img src="../img/reminder.png" style="width:75px;height:75px;">
+                                <br>
+                                <br>
+                                <p style="font-family: 'Open Sans', sans-serif;font-size:12px;">
+                                    <h9 style="color:#388e3c;font-size: 16px;font-weight:bolder;">
+                                        REMINDERS
+                                    </h9>
+
+                                    <br>
+                                    <br>
+                                    Alert yourself when you have an important meeting, or a hot date. We are human,
+                                    everyone forgets.
+                                </p>
                             </div>
-                        </p>
+
+                            <div class="col s4">
+                                <h7 class="col-6-sm center-align">
+
+                                </h7>
+
+
+                                <br>
+
+                                <img src="../img/images.jpeg" style="width:75px;height:75px;">
+                                <br>
+                                <br>
+
+                                <p style="font-family: 'Open Sans', sans-serif;font-size:12px;">
+                                    <h9 style="color:#388e3c;font-size: 16px;font-weight:bolder;">
+                                        ONLINE SCHEDULE
+                                    </h9>
+
+                                    <br>
+                                    <br>
+                                    Have your schedule always connected, traveling on your phone or computer to all
+                                    events.
+                                </p>
+                            </div>
+                            <div class="col s4">
+
+                                <h7 class="col-6-sm right-align">
+
+                                </h7>
+
+
+                                <br>
+                                <img src="../img/download.jpeg" style="width:75px;height:75px;">
+                                <br>
+                                <br>
+                                <p style="font-family: 'Open Sans', sans-serif;font-size:12px;">
+                                    <h9 style="color:#388e3c;font-size: 16px;font-weight:bolder;">
+                                        LIFE HACKS
+                                    </h9>
+
+                                    <br>
+                                    <br>
+                                    We've got you covered on life hacks, need a way to take your thoughts outside the
+                                    box? View our life hacks and add some of your own.
+                                </p>
+                            </div>
+
+
+
+                        </div>
                     </div>
-                    <div class="carousel-item white-text" style="background-color:#212121" href="#three!">
-                        <h2>Third Panel</h2>
-                        <p class="white-text"></p>
-                    </div>
-                    <div class="carousel-item white-text" style="background-color:#212121" href="#four!">
-                        <h2>Fourth Panel</h2>
-                        <p class="white-text"></p>
+
+
+                </p>
+            </div>
+            <div class="carousel-item white-text" style="background-color:#212121" href="#three!">
+                <h2 style="color:#388e3c;font-family: 'Open Sans', sans-serif;font-weight: bolder;">ONLINE SCHEDULER
+                </h2>
+                <br>
+                <br>
+                <p class="white-text"
+                    style="float:left;padding-left:45px;padding-top:30pxfont-family: 'Open Sans', sans-serif;">
+                    Schedule
+                    each new event
+                    right at the tip of
+                    your finger tips.
+                    <br>
+
+                    Never forget an important event, and alert yourself with our reminder system.</p>
+                <img src="../img/images.jpeg" style="float:right;width:40vw;height:50vh;">
+
+
+
+            </div>
+            <div class="carousel-item white-text" style="background-color:#212121" href="#four!">
+                <h2 style="color:#388e3c;font-family: 'Open Sans', sans-serif;font-weight: bolder;">LIFE HACKS</h2>
+                <img src="../img/IMG_1609.JPG" style="float:right;width:40vw;height:40vh;padding-right:200px;">
+                <p class="white-text"></p>
+                <div class="row">
+                    <div class="col s6">
+                        <div class="row">
+                            <div class="input-field col s12" style="padding-left:50px;">
+                                <i class="material-icons prefix">textsms</i>
+                                <input type="text" id="autocomplete-input" class="autocomplete">
+                                <label for="autocomplete-input" style="padding-left:50px;">Search Hacks</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
-            <h1 class="center-align">
-
-
         </div>
-
-
-        <div>
-            <h1>jkasdflskfj</h1>
-        </div>
-        <!-- <img src="../img/betterpic.jpg" alt="pic" style="width:100%;"> -->
-
     </div>
-
-
-    <footer class="page-footer"
-        style="background-color: #388e3c;bottom:0;left:0;width:100%;height:7vh;border-top: 3px rgb(161, 161, 161) solid;">
-
-    </footer>
+    <h1 class="center-align">
 
 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/app.js"></script>
+
+
+
+
+
+        <img src="../img/betterpic.jpg" alt="pic" style="width:100%;">
+
+
+        <footer class="page-footer"
+            style="background-color: #388e3c;position:fixed;bottom:0;left:0;width:100%;height:7vh;border-top: 3px rgb(161, 161, 161) solid;">
+
+
+
+
+
+
+        </footer>
+
+
+
+
+
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../js/app.js"></script>
 </body>
 
 </html>

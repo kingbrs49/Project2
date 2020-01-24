@@ -23,7 +23,7 @@ var db = require("./models");
 // #### Express app
 // ==============================================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 
 // #### Express app tp handle data parsing
 // ==============================================================================
