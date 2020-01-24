@@ -42,3 +42,7 @@ $(".submit").on("click", function () {
     // eslint-disable-next-line prettier/prettier
 
 });
+
+$(document).ready(function () {
+    $('.sidenav').sidenav();
+});
