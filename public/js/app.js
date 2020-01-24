@@ -12,10 +12,6 @@ $(document).ready(function () {
     }
     );
 
-    $("#upload_widget").on("click", function () {
-        myWidget.open();
-        console.log("Hello!")
-    });
 
 <<<<<<< HEAD
 $('.carousel.carousel-slider').carousel({
