@@ -40,6 +40,7 @@ module.exports = function (app) {
     const shuffledResult = shuffle(result.resources);
     console.log(shuffledResult);
     res.json(shuffledResult);
+    Math.floor(Math.random() * shuffledResult[0].url);
   });
   });
   // app.post("/api/file", function(req, res) {
