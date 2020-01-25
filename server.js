@@ -7,6 +7,7 @@
 //      npm i mysql2
 //      npm nodemailer
 //      npm node-schedule
+//      npm i orm
 
 // #### Dependencies
 // ==============================================================================
@@ -14,6 +15,7 @@ require("dotenv").config();
 var nodemailer = require("nodemailer");
 var schedule = require("node-schedule");
 var express = require("express");
+var orm = require("orm");
 // var exphbs = require("express-handlebars");
 
 // #### Requiring models for syncing
