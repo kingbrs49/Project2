@@ -1,6 +1,7 @@
 body{
   background-image: url("../img/betterpic.jpg");
-  background-size: cover ;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
   color: white;
 }
 .list-group-item {
@@ -60,6 +61,7 @@ main {
   height: auto;
   border: solid 5px black;
   margin-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 .reminder-name{
@@ -82,12 +84,16 @@ input{
   background-color:#212121;
   height: auto;
   margin: 10px 10px;
+  padding-bottom: 40px;
 }
 .reminderTable{
+  font-size: 20px;
   color:white;
   text-align: center;
   background-color: #388e3c;
-  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: solid 5px gray;
 }
 
 .hackimg{
@@ -99,6 +105,7 @@ input{
 
 .page-footer{
   position: sticky;
+  margin-top:10px;
 }
 
 .modal-content {
