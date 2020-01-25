@@ -18,18 +18,18 @@ $(document).ready(function () {
         console.log("Hello!")
     });
 
-    // const myGallery = cloudinary.galleryWidget({ 
-    //     container: "#my-gallery", 
-    //     cloudName: "integrated-information-consultants-llc", 
-    //     displayProps: {
-    //         mode: "expanded",
-    //         topOffset: 70 // to account for the menu element at the top of this documentation page
-    //       },
-    //     mediaAssets: [{ tag: "life-hacks" }]    // by default mediaType: "image"
-    //   });
+    const myGallery = cloudinary.galleryWidget({ 
+        container: "#my-gallery", 
+        cloudName: "integrated-information-consultants-llc", 
+        displayProps: {
+            mode: "expanded",
+            topOffset: 70 // to account for the menu element at the top of this documentation page
+          },
+        mediaAssets: [{ tag: "life-hacks" }]    // by default mediaType: "image"
+      });
 
-    //   myGallery.render();
-    //   console.log("rendered!")
+      myGallery.render();
+      console.log("rendered!")
 
     //     $("#file-upload").change(async function (e) {
 
@@ -89,14 +89,13 @@ $(document).ready(function () {
 });
 
 function uploadImg() {
-    $.ajax({ url: "/api/lifeHacks", 
-    method: "GET" 
-}).then(function (hackImg) {
-    
-    var imgHolder = $(".random-image");
-    var img = $("<img src=" + hackImg + " class= 'hackImg' height='750' width='500'>")
-    imgHolder.append(img);
-})
-}
+    $.ajax({ url: "/api/lifeHacks", method: "GET" })
+        .then(function (hackImg) {
+            // console.log(hackImg);
 
+            var imgHolder = $(".random-image");
+            var img = $("<img src=" + hackImg + " class= 'hackimg' height='500' width='750'>")
+            imgHolder.append(img);
+        })
+}
 uploadImg();

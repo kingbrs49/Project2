@@ -1,6 +1,7 @@
 body{
   background-image: url("../img/betterpic.jpg");
-  background-size: cover ;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
   color: white;
 }
 .list-group-item {
@@ -51,6 +52,7 @@ main {
   flex-direction: column;
   flex: 1 0 auto;
 } 
+
 .reminder-holder{
   color: #388e3c;
   text-align: center;
@@ -59,12 +61,17 @@ main {
   height: auto;
   border: solid 5px black;
   margin-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 .reminder-name{
   background-color: #212121;
   margin: 10px;
 }
+/* .datepicker{
+  color: black;
+} */
+
 input{
   color: white;
 }
@@ -73,18 +80,32 @@ input{
   text-align: center;
 }
 .reminder{
-  color: white;
+  color: black;
   background-color:#212121;
   height: auto;
   margin: 10px 10px;
+  padding-bottom: 40px;
 }
 .reminderTable{
+  font-size: 20px;
+  color:white;
   text-align: center;
   background-color: #388e3c;
-  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: solid 5px gray;
 }
+
+.hackimg{
+  margin: 10px 10px;
+  border: solid 5px #388e3c;
+  background-color: white;
+  z-index: 9999;
+}
+
 .page-footer{
   position: sticky;
+  margin-top:10px;
 }
 
 .modal-content {
