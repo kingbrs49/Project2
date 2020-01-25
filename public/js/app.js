@@ -42,3 +42,11 @@ $(".submit").on("click", function () {
     // eslint-disable-next-line prettier/prettier
 
 });
+
+//Modal Code
+$(document).ready(function(){
+    $('.modal').modal();
+  });
+$(document).ready(function () {
+    $('.sidenav').sidenav();
+});
