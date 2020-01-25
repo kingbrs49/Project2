@@ -18,6 +18,7 @@ $(document).ready(function () {
         console.log("Hello!")
     });
 
+
     //     $("#file-upload").change(async function (e) {
 
 
@@ -74,3 +75,15 @@ $(document).ready(function () {
     // });
 
 });
+
+function uploadImg() {
+    $.ajax({ url: "/api/lifeHacks", method: "GET" })
+        .then(function (hackImg) {
+            console.log(hackImg);
+
+            var imgHolder = $("#random-image");
+            var img = $("<img src=" + hackImg + " height='300' width='300'>")
+            imgHolder.append(img);
+        })
+}
+uploadImg();
