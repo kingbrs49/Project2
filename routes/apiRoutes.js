@@ -42,7 +42,7 @@ module.exports = function (app) {
         // req.send(shuffledResult[0].url)
         var hackImg = shuffledResult[0].url
         res.send(hackImg);
-        console.log(shuffledResult[0].url)
+        // console.log(shuffledResult[0].url)
         res.json(shuffledResult);
         // Math.floor(Math.random() * shuffledResult[0].url);
       });
