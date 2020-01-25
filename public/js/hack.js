@@ -82,7 +82,7 @@ function uploadImg() {
             // console.log(hackImg);
 
             var imgHolder = $(".random-image");
-            var img = $("<img src=" + hackImg + " class= 'hackimg' height='500' width='500'>")
+            var img = $("<img src=" + hackImg + " class= 'hackimg' height='500' width='750'>")
             imgHolder.append(img);
         })
 }
