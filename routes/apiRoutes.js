@@ -38,9 +38,11 @@ module.exports = function (app) {
   .execute().then(result => {
     //console.log(result);
     const shuffledResult = shuffle(result.resources);
-    console.log(shuffledResult);
+    //console.log(shuffledResult);
+    var hackImg = suffledResult[0].url;
+    res.send(hackImg);
     res.json(shuffledResult);
-    Math.floor(Math.random() * shuffledResult[0].url);
+    //Math.floor(Math.random() * shuffledResult[0].url);
   });
   });
   // app.post("/api/file", function(req, res) {
