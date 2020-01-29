@@ -30,6 +30,7 @@ cloudinary.config({
   api_secret: "dSz3LaW8nqZgTfl1OgcSz8n6wlE"
 });
 
+// Add email to database
 module.exports = function (app) {
   app.post("/api/lifeHacks", function (req, res) {
     db.subscribers.create({
@@ -72,49 +73,8 @@ module.exports = function (app) {
     db.schedule.findAll({}).then(function (data) {
       res.json(data);
     });
-
   });
-
-  // app.post("/api/lifeHacks", function (req, res) {
-  //   db.subscribers.create({
-  //     name: req.body.name,
-  //     mail: req.body.email
-  //   }).then(function (dblifeHacks) {
-  //     res.json(dblifeHacks);
-
-  //   });
-
-
-
-
-
-  // app.post("/api/file", function(req, res) {
-  //   console.log(img);
-  //   cloudinary.uploader.upload(
-  //     req.files.image.path,
-  //     {
-  //       width: 300,
-  //       height: 300,
-  //       crop: "limit",
-  //       tags: req.body.tags,
-  //       moderation: "manual"
-  //     },
-  //     function() {
-  //       console.log(result);
-  //       res.json(result);
-  //     }
-  //   );
-  // });
 };
-// // ==============================================================================
-// module.exports = function (app) {
-//   // Get all the lifeHacks_db data
-//   app.get("/api/hacks", function (req, res) {
-//     db.Hacks.f indAll({}).then(function (dbHacks) {
-//       res.json(dbHacks);
-//       // res.end("yoyoyoyooy")
-//     });
-//   });
 
 //   // Create a life hack
 //   app.post("/api/hacks", function (req, res) {

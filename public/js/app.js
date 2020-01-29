@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable prettier/prettier */
 $('.carousel.carousel-slider').carousel({
     fullWidth: true,
@@ -29,23 +30,30 @@ $(".submit").on("click", function () {
     $(".timepicker").val("");
     $(".datepicker").val("");
 
+    var listId = 0;
+
     // CREATES NEW ROW IN THE TABLE
     var newRow = $("<tr>");
-    newRow.attr("class", "list");
+    listId++;
+    newRow.attr("class", "list-" + listId);
     var reminderTd = $("<td>").text(reminder);
     var dateTd = $("<td>").text(date);
     var timeTd = $("<td>").text(time);
-    var checkbox = $("<td>").append("<form action='#'> <p> <label> <input class='filled-in' type='checkbox' /> <span>Done</span></label></p> </form>");
-
-    newRow.append(reminderTd, dateTd, timeTd, checkbox);
+    var checkbox = $("<td>").append("<form action='#'> <p> <label class='strike'> <input class='filled-in' type='checkbox'/> <span class='black-text'>Done</span></label></p> </form>");
+    var deleteBtn = $("<button class='remove'> Delete </button>");
+    var buttonTd = $("<td>").append(deleteBtn)
+    newRow.append(reminderTd, dateTd, timeTd, checkbox, buttonTd);
     $("tbody").append(newRow);
-    // eslint-disable-next-line prettier/prettier
 
+    // $(".remove").on("click", function () {
+    //     newRow.remove(".list" + listId);
+    //     console.log("hksahfk")
+    // });
 });
 
 $("#submit").on("click", function () {
     var name = $("#name").val().trim()
-    var email =$("#email").val().trim()
+    var email = $("#email").val().trim()
     const userInfo = { name: name, email: email };
     console.log(name);
     console.log(email);
@@ -54,15 +62,15 @@ $("#submit").on("click", function () {
         method: 'POST',
         url: '/api/lifeHacks',
         data: userInfo,
-        }).then(function (resData) {
+    }).then(function (resData) {
         console.log(resData);
     });
 });
 
 //Modal Code
-$(document).ready(function(){
+$(document).ready(function () {
     $('.modal').modal();
-  });
+});
 $(document).ready(function () {
     $('.sidenav').sidenav();
 });
