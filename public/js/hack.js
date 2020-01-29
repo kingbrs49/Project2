@@ -4,7 +4,8 @@ $(document).ready(function () {
 
     var myWidget = cloudinary.createUploadWidget({
         cloudName: 'integrated-information-consultants-llc',
-        uploadPreset: 'zjqc8ehn'
+        uploadPreset: 'zjqc8ehn',
+        showAdvancedOptions: true,
     },
         (error, result) => {
             if (!error && result && result.event === "success") {

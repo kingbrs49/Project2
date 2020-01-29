@@ -31,6 +31,15 @@ cloudinary.config({
 });
 
 module.exports = function (app) {
+  app.post("/api/lifeHacks", function (req, res) {
+    db.subscribers.create({
+      name: req.body.name,
+      mail: req.body.email
+    }).then(function (dblifeHacks) {
+      res.json(dblifeHacks);
+
+    });
+  });
   app.get("/api/lifeHacks", function (req, res) {
     cloudinary.search
       .expression('resource_type:image')
@@ -39,9 +48,13 @@ module.exports = function (app) {
       .execute().then(result => {
         //console.log(result);
         const shuffledResult = shuffle(result.resources);
-        console.log(shuffledResult);
+        // console.log(shuffledResult);
+        // req.send(shuffledResult[0].url)
+        var hackImg = shuffledResult[0].url
+        res.send(hackImg);
+        // console.log(shuffledResult[0].url)
         res.json(shuffledResult);
-        Math.floor(Math.random() * shuffledResult[0].url);
+        // Math.floor(Math.random() * shuffledResult[0].url);
       });
   });
 
@@ -118,5 +131,6 @@ module.exports = function (app) {
 //   });
 // };
 
+  // Add email to database
 // Add email to database
 
