@@ -76,8 +76,6 @@ module.exports = function (app) {
   });
 };
 
-<<<<<<< HEAD
-=======
 //   // Create a life hack
 //   app.post("/api/hacks", function (req, res) {
 //     db.Hacks.create(req.body).then(function (dbHacks) {
@@ -95,5 +93,4 @@ module.exports = function (app) {
 
   // Add email to database
 // Add email to database
->>>>>>> 99897561c1f1c00357d0484f05f4790efe6c4bbb
 
