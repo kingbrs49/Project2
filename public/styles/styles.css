@@ -112,3 +112,8 @@ input{
   color: black;
   background-color: #388e3c;
 }
+
+.datepicker-container, .timepicker-container{
+  color: black;
+  background-color: white !important;
+}

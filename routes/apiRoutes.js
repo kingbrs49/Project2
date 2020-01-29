@@ -59,15 +59,19 @@ module.exports = function (app) {
     db.schedule.findAll({}).then(function (data) {
       res.json(data);
     });
-    // console.log(shuffledResult);
-    // req.send(shuffledResult[0].url)
-    var hackImg = shuffledResult[0].url
-    res.send(hackImg);
-    // console.log(shuffledResult[0].url)
-    res.json(shuffledResult);
-    // Math.floor(Math.random() * shuffledResult[0].url);
+
   });
-});
+
+  // app.post("/api/lifeHacks", function (req, res) {
+  //   db.subscribers.create({
+  //     name: req.body.name,
+  //     mail: req.body.email
+  //   }).then(function (dblifeHacks) {
+  //     res.json(dblifeHacks);
+
+  //   });
+
+
 
 
 
@@ -115,15 +119,4 @@ module.exports = function (app) {
 // };
 
 // Add email to database
-module.exports = function (app) {
-  app.post("/api/lifeHacks", function (req, res) {
-    db.subscribers.create({
-      name: req.body.name,
-      mail: req.body.email
-    }).then(function (dblifeHacks) {
-      res.json(dblifeHacks);
-
-    });
-  });
-};
 
