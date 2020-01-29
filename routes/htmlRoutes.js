@@ -12,6 +12,14 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/html/reminder.html"));
   });
   app.get("/schedule", function (req, res) {
+
+    // db.schedule.findAll({}).then(function (data) {
+    //   return data;
+    // });
+
+
+
+
     res.sendFile(path.join(__dirname, "../public/html/schedule.html"));
   });
 

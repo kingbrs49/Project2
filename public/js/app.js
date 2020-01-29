@@ -43,6 +43,10 @@ $(".submit").on("click", function () {
 
 });
 
+//Modal Code
+$(document).ready(function(){
+    $('.modal').modal();
+  });
 $(document).ready(function () {
     $('.sidenav').sidenav();
 });
