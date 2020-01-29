@@ -35,12 +35,28 @@ $(".submit").on("click", function () {
     var reminderTd = $("<td>").text(reminder);
     var dateTd = $("<td>").text(date);
     var timeTd = $("<td>").text(time);
-    var checkbox = $("<td>").append("<form action='#'> <p> <label> <input type='checkbox' /><span>Done</span></label></p> </form>");
+    var checkbox = $("<td>").append("<form action='#'> <p> <label> <input class='filled-in' type='checkbox' /> <span>Done</span></label></p> </form>");
 
     newRow.append(reminderTd, dateTd, timeTd, checkbox);
     $("tbody").append(newRow);
     // eslint-disable-next-line prettier/prettier
 
+});
+
+$("#submit").on("click", function () {
+    var name = $("#name").val().trim()
+    var email =$("#email").val().trim()
+    const userInfo = { name: name, email: email };
+    console.log(name);
+    console.log(email);
+
+    $.ajax({
+        method: 'POST',
+        url: '/api/lifeHacks',
+        data: userInfo,
+        }).then(function (resData) {
+        console.log(resData);
+    });
 });
 
 //Modal Code

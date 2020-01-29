@@ -22,6 +22,9 @@ module.exports = function (app) {
 
     res.sendFile(path.join(__dirname, "../public/html/schedule.html"));
   });
+  app.get("/hacksdisplay", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/display-hacks.html"));
+  });
 
   // // Load example page and pass in an example by id
   // app.get("/hack/:id", function(req, res) {
