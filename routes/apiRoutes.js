@@ -1,5 +1,6 @@
 // /* eslint-disable prettier/prettier */
 var db = require("../models");
+// var app = require("express").Router();
 
 // // #### Routes
 function shuffle(array) {
@@ -29,33 +30,7 @@ cloudinary.config({
   api_secret: "dSz3LaW8nqZgTfl1OgcSz8n6wlE"
 });
 
-// // ==============================================================================
-// module.exports = function (app) {
-//   // Get all the lifeHacks_db data
-//   app.get("/api/hacks", function (req, res) {
-//     db.Hacks.f indAll({}).then(function (dbHacks) {
-//       res.json(dbHacks);
-//       // res.end("yoyoyoyooy")
-//     });
-//   });
-
-//   // Create a life hack
-//   app.post("/api/hacks", function (req, res) {
-//     db.Hacks.create(req.body).then(function (dbHacks) {
-//       res.json(dbHacks);
-//     });
-//   });
-
-//   // Delete an hack by id
-//   app.delete("/api/hacks/:id", function (req, res) {
-//     db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
-//       res.json(dbHacks);
-//     });
-//   });
-// };
-
-  // Add email to database
-  module.exports = function (app) {
+module.exports = function (app) {
   app.post("/api/lifeHacks", function (req, res) {
     db.subscribers.create({
       name: req.body.name,
@@ -82,5 +57,80 @@ cloudinary.config({
         // Math.floor(Math.random() * shuffledResult[0].url);
       });
   });
+
+  // module.exports = function (app) {
+  //post to schedule
+  app.post("/api/schedule", function (req, res) {
+    // console.log(this);
+    console.log(req.body);
+    db.schedule.create(req.body).then(function (dbSchedule) {
+      res.json(dbSchedule);
+    });
+  });
+  //get from schedule
+  app.get("/api/schedule", function (req, res) {
+    db.schedule.findAll({}).then(function (data) {
+      res.json(data);
+    });
+
+  });
+
+  // app.post("/api/lifeHacks", function (req, res) {
+  //   db.subscribers.create({
+  //     name: req.body.name,
+  //     mail: req.body.email
+  //   }).then(function (dblifeHacks) {
+  //     res.json(dblifeHacks);
+
+  //   });
+
+
+
+
+
+  // app.post("/api/file", function(req, res) {
+  //   console.log(img);
+  //   cloudinary.uploader.upload(
+  //     req.files.image.path,
+  //     {
+  //       width: 300,
+  //       height: 300,
+  //       crop: "limit",
+  //       tags: req.body.tags,
+  //       moderation: "manual"
+  //     },
+  //     function() {
+  //       console.log(result);
+  //       res.json(result);
+  //     }
+  //   );
+  // });
 };
+// // ==============================================================================
+// module.exports = function (app) {
+//   // Get all the lifeHacks_db data
+//   app.get("/api/hacks", function (req, res) {
+//     db.Hacks.f indAll({}).then(function (dbHacks) {
+//       res.json(dbHacks);
+//       // res.end("yoyoyoyooy")
+//     });
+//   });
+
+//   // Create a life hack
+//   app.post("/api/hacks", function (req, res) {
+//     db.Hacks.create(req.body).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+
+//   // Delete an hack by id
+//   app.delete("/api/hacks/:id", function (req, res) {
+//     db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+// };
+
+  // Add email to database
+// Add email to database
 
