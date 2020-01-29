@@ -1,5 +1,6 @@
 // /* eslint-disable prettier/prettier */
 var db = require("../models");
+// var app = require("express").Router();
 
 // // #### Routes
 function shuffle(array) {
@@ -38,15 +39,42 @@ module.exports = function (app) {
       .execute().then(result => {
         //console.log(result);
         const shuffledResult = shuffle(result.resources);
-        // console.log(shuffledResult);
-        // req.send(shuffledResult[0].url)
-        var hackImg = shuffledResult[0].url
-        res.send(hackImg);
-        // console.log(shuffledResult[0].url)
+        console.log(shuffledResult);
         res.json(shuffledResult);
-        // Math.floor(Math.random() * shuffledResult[0].url);
+        Math.floor(Math.random() * shuffledResult[0].url);
       });
   });
+
+  // module.exports = function (app) {
+  //post to schedule
+  app.post("/api/schedule", function (req, res) {
+    // console.log(this);
+    console.log(req.body);
+    db.schedule.create(req.body).then(function (dbSchedule) {
+      res.json(dbSchedule);
+    });
+  });
+  //get from schedule
+  app.get("/api/schedule", function (req, res) {
+    db.schedule.findAll({}).then(function (data) {
+      res.json(data);
+    });
+
+  });
+
+  // app.post("/api/lifeHacks", function (req, res) {
+  //   db.subscribers.create({
+  //     name: req.body.name,
+  //     mail: req.body.email
+  //   }).then(function (dblifeHacks) {
+  //     res.json(dblifeHacks);
+
+  //   });
+
+
+
+
+
   // app.post("/api/file", function(req, res) {
   //   console.log(img);
   //   cloudinary.uploader.upload(
@@ -90,16 +118,5 @@ module.exports = function (app) {
 //   });
 // };
 
-  // Add email to database
-  module.exports = function (app) {
-  app.post("/api/lifeHacks", function (req, res) {
-    db.subscribers.create({
-      name: req.body.name,
-      mail: req.body.email
-    }).then(function (dblifeHacks) {
-      res.json(dblifeHacks);
-
-    });
-  });
-};
+// Add email to database
 

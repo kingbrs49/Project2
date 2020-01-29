@@ -1,17 +1,25 @@
 var db = require("../models");
 var path = require("path");
 
-module.exports = function(app) {
-  app.get("/", function(req, res) {
+module.exports = function (app) {
+  app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
   });
-  app.get("/hacks", function(req, res) {
+  app.get("/hacks", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/html/hacks.html"));
   });
-  app.get("/reminder", function(req, res) {
+  app.get("/reminder", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/html/reminder.html"));
   });
-  app.get("/schedule", function(req, res) {
+  app.get("/schedule", function (req, res) {
+
+    // db.schedule.findAll({}).then(function (data) {
+    //   return data;
+    // });
+
+
+
+
     res.sendFile(path.join(__dirname, "../public/html/schedule.html"));
   });
   app.get("/hacksdisplay", function(req, res) {
