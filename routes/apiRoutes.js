@@ -49,9 +49,13 @@ module.exports = function (app) {
       .execute().then(result => {
         //console.log(result);
         const shuffledResult = shuffle(result.resources);
-        console.log(shuffledResult);
+        // console.log(shuffledResult);
+        // req.send(shuffledResult[0].url)
+        var hackImg = shuffledResult[0].url
+        res.send(hackImg);
+        // console.log(shuffledResult[0].url)
         res.json(shuffledResult);
-        Math.floor(Math.random() * shuffledResult[0].url);
+        // Math.floor(Math.random() * shuffledResult[0].url);
       });
   });
 
@@ -72,4 +76,24 @@ module.exports = function (app) {
   });
 };
 
+<<<<<<< HEAD
+=======
+//   // Create a life hack
+//   app.post("/api/hacks", function (req, res) {
+//     db.Hacks.create(req.body).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+
+//   // Delete an hack by id
+//   app.delete("/api/hacks/:id", function (req, res) {
+//     db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
+//       res.json(dbHacks);
+//     });
+//   });
+// };
+
+  // Add email to database
+// Add email to database
+>>>>>>> 99897561c1f1c00357d0484f05f4790efe6c4bbb
 
