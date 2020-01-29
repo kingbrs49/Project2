@@ -51,10 +51,21 @@ $(".submit").on("click", function () {
     // });
 });
 
+$("#submit").on("click", function () {
+    var name = $("#name").val().trim()
+    var email = $("#email").val().trim()
+    const userInfo = { name: name, email: email };
+    console.log(name);
+    console.log(email);
 
-
-// IF CHECKBOX IS CHECKED - CROSS OUT REMINDER ROW
-
+    $.ajax({
+        method: 'POST',
+        url: '/api/lifeHacks',
+        data: userInfo,
+    }).then(function (resData) {
+        console.log(resData);
+    });
+});
 
 //Modal Code
 $(document).ready(function () {

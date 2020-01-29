@@ -1,5 +1,5 @@
 // /* eslint-disable prettier/prettier */
-// var db = require("../models");
+var db = require("../models");
 
 // // #### Routes
 function shuffle(array) {
@@ -29,7 +29,17 @@ cloudinary.config({
   api_secret: "dSz3LaW8nqZgTfl1OgcSz8n6wlE"
 });
 
+// Add email to database
 module.exports = function (app) {
+  app.post("/api/lifeHacks", function (req, res) {
+    db.subscribers.create({
+      name: req.body.name,
+      mail: req.body.email
+    }).then(function (dblifeHacks) {
+      res.json(dblifeHacks);
+
+    });
+  });
   app.get("/api/lifeHacks", function (req, res) {
     cloudinary.search
       .expression('resource_type:image')
@@ -47,45 +57,5 @@ module.exports = function (app) {
         // Math.floor(Math.random() * shuffledResult[0].url);
       });
   });
-  // app.post("/api/file", function(req, res) {
-  //   console.log(img);
-  //   cloudinary.uploader.upload(
-  //     req.files.image.path,
-  //     {
-  //       width: 300,
-  //       height: 300,
-  //       crop: "limit",
-  //       tags: req.body.tags,
-  //       moderation: "manual"
-  //     },
-  //     function() {
-  //       console.log(result);
-  //       res.json(result);
-  //     }
-  //   );
-  // });
 };
-// // ==============================================================================
-// module.exports = function (app) {
-//   // Get all the lifeHacks_db data
-//   app.get("/api/hacks", function (req, res) {
-//     db.Hacks.findAll({}).then(function (dbHacks) {
-//       res.json(dbHacks);
-//       // res.end("yoyoyoyooy")
-//     });
-//   });
 
-//   // Create a life hack
-//   app.post("/api/hacks", function (req, res) {
-//     db.Hacks.create(req.body).then(function (dbHacks) {
-//       res.json(dbHacks);
-//     });
-//   });
-
-//   // Delete an hack by id
-//   app.delete("/api/hacks/:id", function (req, res) {
-//     db.Hacks.destroy({ where: { id: req.params.id } }).then(function (dbHacks) {
-//       res.json(dbHacks);
-//     });
-//   });
-// };
